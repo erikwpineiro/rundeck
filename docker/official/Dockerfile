@@ -1,6 +1,6 @@
 FROM rundeck/rundeck:3.0.8
 
-COPY --chown=rundeck ./rundeck-bluecat-gateway-plugin-master.zip /home/rundeck/libext/rundeck-bluecat-gateway-plugin-master.zip
+COPY --chown=rundeck ../../rundeck-bluecat-gateway-plugin-master.zip /home/rundeck/libext/rundeck-bluecat-gateway-plugin-master.zip
 COPY --chown=rundeck:root .build .
 RUN java -jar rundeck.war --installonly \
     # Create plugin folder
