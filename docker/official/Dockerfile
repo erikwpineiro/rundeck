@@ -4,7 +4,7 @@ COPY --chown=rundeck ./rundeck-bluecat-gateway-plugin-master.zip /home/rundeck/l
 COPY --chown=rundeck:root .build .
 RUN java -jar rundeck.war --installonly \
     # Create plugin folder
-    && mkdir libext \
+    && mkdir -p libext \
     # Adjust permissions for OpenShift
     && chmod -R 0775 libext server tools user-assets var
 
